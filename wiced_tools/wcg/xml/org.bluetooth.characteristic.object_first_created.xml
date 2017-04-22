@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2015 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Object First-Created" type="org.bluetooth.characteristic.object_first_created" uuid="2AC1" last-modified="2015-11-23" approved="yes">
+    <InformativeText>
+        <Abstract>
+            The Object First-Created characteristic exposes a value representing a date and time when the object contents were first created. Note that this may be an earlier date than the date of the creation of the object on the present Server; it can relate to the original file creation date of a firmware release, for instance, rather than the time that the object was written to the Server. The date and time value shall be represented in Coordinated Universal Time (UTC).
+        </Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Object First-Created">
+            <Requirement>Mandatory</Requirement>
+            <Reference>org.bluetooth.characteristic.date_time</Reference>
+        </Field>
+    </Value>
+    <Note>
+        <p>
+            The fields in the above table, reading from top to bottom, are shown in the order of LSO to MSO, where LSO = Least Significant Octet and MSO = Most Significant Octet.
+            Data Type: Same format as the Date Time characteristic
+        </p>
+    </Note>
+</Characteristic>

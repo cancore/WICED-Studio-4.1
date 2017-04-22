@@ -1,0 +1,2 @@
+WICED Version: 4.1.0
+c3a82e55aa913f8d05b7bc8e01623cab01c03465

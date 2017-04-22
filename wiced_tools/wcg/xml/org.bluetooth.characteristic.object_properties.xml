@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2014 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Object Properties" type="org.bluetooth.characteristic.object_properties" uuid="2AC4" last-modified="2015-11-23" approved="Yes">
+    <InformativeText>
+        <Abstract>
+            The Object Properties characteristic exposes a bit field representing the properties of the Current Object.
+        </Abstract>
+        <Summary>
+            The Object Properties characteristic is defined in the Object Transfer Service Section 3.2.8
+        </Summary>
+    </InformativeText>
+    <Value>
+        <Field name="Object Properties">
+            <Requirement>Mandatory</Requirement>
+            <Format>32bit</Format>
+            <BitField>
+                <Bit index="0" size="1" name="Deletion of this object is permitted">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="1" size="1" name="Execution of this object is permitted">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="2" size="1" name="Reading this object is permitted">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="3" size="1" name="Writing data to this object is permitted">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="4" size="1" name="Appending data to this object that increases its Allocated Size is permitted">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="5" size="1" name="Truncation of this object is permitted">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="6" size="1" name="Patching this object by overwriting some of the object’s existing contents is permitted">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="7" size="1" name="This object is a marked object">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <ReservedForFutureUse index="8" size="24" />
+            </BitField>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>

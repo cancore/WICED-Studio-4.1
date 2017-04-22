@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2015 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="OTS Feature" type="org.bluetooth.characteristic.ots_feature" uuid="2ABD" last-modified="2015-11-19" approved="Yes">
+    <InformativeText>
+        <Abstract>
+            The OTS Feature characteristic exposes which optional features are supported by the Server implementation.
+        </Abstract>
+        <Summary>
+            The OTS Feature characteristic is defined in the Object Transfer Service Section 3.1 and its sub-sections.
+        </Summary>
+    </InformativeText>
+    <Value>
+        <Field name="OACP Features">
+            <Requirement>Mandatory</Requirement>
+            <Format>32bit</Format>
+            <BitField>
+                <Bit index="0" size="1" name="OACP Create Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="1" size="1" name="OACP Delete Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="2" size="1" name="OACP Calculate Checksum Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="3" size="1" name="OACP Execute Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="4" size="1" name="OACP Read Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="5" size="1" name="OACP Write Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="6" size="1" name="Appending Additional Data to Objects Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="7" size="1" name="Truncation of Objects Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="8" size="1" name="Patching of Objects Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="9" size="1" name="OACP Abort Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <ReservedForFutureUse index="10" size="22" />
+            </BitField>
+        </Field>
+        <Field name="OLCP Features">
+            <Requirement>Mandatory</Requirement>
+            <Format>32bit</Format>
+            <BitField>
+                <Bit index="0" size="1" name="OLCP Go To Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="1" size="1" name="OLCP Order Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="2" size="1" name="OLCP Request Number of Objects Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="3" size="1" name="OLCP Clear Marking Op Code Supported">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <ReservedForFutureUse index="4" size="28" />
+            </BitField>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>

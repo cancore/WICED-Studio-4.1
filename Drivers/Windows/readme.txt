@@ -1,0 +1,1 @@
+To install the "USB Serial Port Driver" and "USB Serial Converter Driver" on Windows OS, double click the DPInst exe for appropriate OS to install the drivers.

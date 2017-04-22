@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2014 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Object List Filter" type="org.bluetooth.characteristic.object_list_filter" uuid="2AC7" last-modified="2015-11-23" approved="Yes">
+    <InformativeText>
+        <Abstract>
+            If Object List Filter characteristics are exposed, the filter conditions shall determine which objects are included in or excluded from the list of objects. The Object List Filter characteristics can therefore modify the behavior of the Object List Control Point. The Object List Filter characteristics thus enable criteria to be set that determine which objects are exposed to the Client.
+        </Abstract>
+        <Summary>
+            The Object List Filter characteristic is defined in the Object Transfer Service Section 3.5 and its sub-sections.
+        </Summary>
+    </InformativeText>
+    <Value>
+        <Field name="Filter">
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="0" value="No Filter (everything passes)" description="No objects are excluded." />
+                <Enumeration key="1" value="Name Starts With" requires="C1" description="Only include objects with names that start with the supplied case-sensitive string." />
+                <Enumeration key="2" value="Name Ends With" requires="C1" description="Only include objects with names that end with the supplied case-sensitive string." />
+                <Enumeration key="3" value="Name Contains" requires="C1" description="Only include objects with names that contain the supplied case-sensitive string." />
+                <Enumeration key="4" value="Name is Exactly" requires="C1" description="Only include objects with names that exactly match the supplied case-sensitive string." />
+                <Enumeration key="5" value="Object Type (UUID)" requires="C3" description="Only include objects with object type that matches the supplied UUID." />
+                <Enumeration key="6" value="Created between (inclusive): timestamp1 &lt;= t &lt;= timestamp2" requires="C3" description="Only include objects with a creation date that falls inclusively within the supplied timestamps. Objects with an undefined or invalid creation date will still be included." />
+                <Enumeration key="7" value="Modified between (inclusive): timestamp1 &lt;= t &lt;= timestamp2" requires="C3" description="Only include objects with a modification date that falls inclusively within the supplied timestamps. Objects with an undefined or invalid modification date will still be included." />
+                <Enumeration key="8" value="Current Size between (inclusive): size1 &lt;= s &lt;= size2" requires="C4" description="Only include objects whose current size is inclusively between the supplied values." />
+                <Enumeration key="9" value="Allocated Size between (inclusive): size1 &lt;= s &lt;= size2" requires="C4" description="Only include objects whose allocated size is inclusively between the supplied values." />
+                <Enumeration key="10" value="Marked Objects" description="Only include objects that have been marked." />
+                <ReservedForFutureUse start="11" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="String">
+            <InformativeText>
+                A case-sensitive string used as a filter condition.
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Format>utf8s</Format>
+        </Field>
+        <Field name="Object Type">
+            <InformativeText>
+                A 16-bit or 128-bit GATT UUID used as a filter condition.
+            </InformativeText>
+            <Requirement>C2</Requirement>
+            <Format>gatt_uuid</Format>
+        </Field>
+        <Field name="Timestamp 1">
+            <InformativeText>
+                A timestamp representing the inclusive start of a time range as a filter condition.
+            </InformativeText>
+            <Requirement>C3</Requirement>
+            <Reference>org.bluetooth.characteristic.date_time</Reference>
+        </Field>
+        <Field name="Timestamp 2">
+            <InformativeText>
+                A timestamp representing the inclusive end of a time range as a filter condition.
+            </InformativeText>
+            <Requirement>C3</Requirement>
+            <Reference>org.bluetooth.characteristic.date_time</Reference>
+        </Field>
+        <Field name="Size 1">
+            <InformativeText>
+                A value representing the inclusive lower bound of a size range as a filter condition.
+            </InformativeText>
+            <Requirement>C4</Requirement>
+            <Format>uint32</Format>
+        </Field>
+        <Field name="Size 2">
+            <InformativeText>
+                A value representing the inclusive upper bound of a size range as a filter condition.
+            </InformativeText>
+            <Requirement>C4</Requirement>
+            <Format>uint32</Format>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>

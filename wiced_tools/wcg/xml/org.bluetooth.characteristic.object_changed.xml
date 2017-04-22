@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2015 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Object Changed" type="org.bluetooth.characteristic.object_changed" uuid="2AC8" last-modified="2015-11-23" approved="Yes">
+    <InformativeText>
+        <Abstract>
+            The Object Changed characteristic enables a Client to receive an indication if the contents and/or metadata of one or more objects are changed while the Client is connected without the change being made by an action of the Client itself. This allows the Client to know that the object database has changed while it is connected.
+        </Abstract>
+        <Summary>
+            The Object Changed characteristic is defined in the Object Transfer Service Section 3.6 and its sub-sections.
+        </Summary>
+    </InformativeText>
+    <Value>
+        <Field name="Flags">
+            <InformativeText>
+                A bit field containing information related to a change that has occurred.
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <BitField>
+                <Bit index="0" size="1" name="Source of Change">
+                    <Enumerations>
+                        <Enumeration key="0" value="Server" />
+                        <Enumeration key="1" value="Client" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="1" size="1" name="Change occurred to the object contents">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="2" size="1" name="Change occurred to the object metadata">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="3" size="1" name="Object creation">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="4" size="1" name="Object Deletion">
+                    <Enumerations>
+                        <Enumeration key="0" value="False" />
+                        <Enumeration key="1" value="True" />
+                    </Enumerations>
+                </Bit>
+                <ReservedForFutureUse index="5" size="3" />
+            </BitField>
+        </Field>
+        <Field name="Object ID">
+            <InformativeText>
+                The Object ID of the object to which the relevant change applies. The value shall not be equal to 0.
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint48</Format>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>

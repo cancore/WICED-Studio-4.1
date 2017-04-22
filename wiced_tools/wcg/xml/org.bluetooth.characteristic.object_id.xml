@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2015 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Object ID" type="org.bluetooth.characteristic.object_id" uuid="2AC3" last-modified="2015-11-23" approved="Yes">
+    <InformativeText>
+        <Abstract>
+            The Object ID characteristic exposes an integer value which is the Object ID of the Current Object. The Object ID is a LUID (Locally Unique Identifier). The allocated Object ID shall be unique on the Server and shall be a UINT48 value in the range 0x000000000100 to 0xFFFFFFFFFFFF. The value 0x000000000000 is reserved for the Directory Listing Object.
+        </Abstract>
+    </InformativeText>
+    <Value>
+        <Field name="Object ID">
+            <Requirement>Mandatory</Requirement>
+            <Format>uint48</Format>
+            <DecimalExponent>0</DecimalExponent>
+            <Enumerations>
+                <Enumeration key="0" value="Reserved for the Directory Listing Object" />
+                <ReservedForFutureUse start="1" end="255" />
+                <VendorSpecific start="256" end="281474976710655" />
+            </Enumerations>
+
+        </Field>
+    </Value>
+    <Note>
+        <p>The fields in the above table, reading from top to bottom, are shown in the order of LSO to MSO, where LSO = Least Significant Octet and MSO = Most Significant Octet.</p>
+    </Note>
+</Characteristic>

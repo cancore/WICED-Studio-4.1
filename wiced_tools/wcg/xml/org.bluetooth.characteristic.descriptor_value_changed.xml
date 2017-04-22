@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2014 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        name="Descriptor Value Changed" type="org.bluetooth.characteristic.descriptor_value_changed" uuid="2A7D" last-modified="2014-11-20" approved="Yes">
+    <InformativeText>
+        This definition is shown in the Environmental Sensing Service Section 3.2 and its subsections.
+    </InformativeText>
+    <Value>
+        <Field name="Flags">
+            <InformativeText>Byte Order - LSO...MSO</InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>16bit</Format>
+            <BitField>
+                <Bit index="0" size="1" name="Source of Change">
+                    <Enumerations>
+                        <Enumeration key="0" value="server" />
+                        <Enumeration key="1" value="client" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="1" size="1" name="Change to one or more ES Trigger Setting Descriptors">
+                    <Enumerations>
+                        <Enumeration key="0" value="false" />
+                        <Enumeration key="1" value="true" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="2" size="1" name="Change to ES Configuration Descriptor">
+                    <Enumerations>
+                        <Enumeration key="0" value="false" />
+                        <Enumeration key="1" value="true" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="3" size="1" name="Change to ES Measurement Descriptor">
+                    <Enumerations>
+                        <Enumeration key="0" value="false" />
+                        <Enumeration key="1" value="true" />
+                    </Enumerations>
+                </Bit>
+                <Bit index="4" size="1" name="Change to Characteristic User Description Descriptor">
+                    <Enumerations>
+                        <Enumeration key="0" value="false" />
+                        <Enumeration key="1" value="true" />
+                    </Enumerations>
+                </Bit>
+                <ReservedForFutureUse index="5" size="11" />
+            </BitField>
+        </Field>
+        <Field name="Characteristic UUID">
+            <InformativeText>The 16 or 128-bit GATT UUID for the affected ESS Characteristic</InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>gatt_uuid</Format>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>

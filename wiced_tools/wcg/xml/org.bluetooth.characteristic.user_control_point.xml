@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2014 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="User Control Point" type="org.bluetooth.characteristic.user_control_point" uuid="2A9F" last-modified="2014-06-10" approved="Yes">
+    <InformativeText>
+        This definition is shown in the User Data Service Section 3.4 and its subsections.
+    </InformativeText>
+    <Value>
+        <Field name="Op Code">
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="0" value="Reserved for future use" />
+                <Enumeration key="1" value="Register New User" requires="C2" description="Initiates the procedure to register a new user. The Consent Code for that user is sent as parameter to this op" />
+                <Enumeration key="2" value="Consent" requires="C1,C2" description="Initiate the procedure to allow a Client to access the user data stored in the Server (i.e. the user gives consent). The User Index and the Consent Code are sent as parameters to this op code. The response to this control point is Op Code 0x20 followed by the appropriate Response Value." />
+                <Enumeration key="3" value="Delete User Data" requires="N/A" description="Deletes the user data of the current user as well as its Consent Code. The response to this control point is Op Code 0x20 followed by the appropriate Response Value." />
+                <Enumeration key="16" value="Response Code" requires="C3" />
+                <ReservedForFutureUse start="4" end="31" />
+                <ReservedForFutureUse start="33" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="User Index">
+            <Requirement>C1</Requirement>
+            <Reference>org.bluetooth.characteristic.user_index</Reference>
+        </Field>
+        <Field name="Consent Code">
+            <Requirement>C2</Requirement>
+            <Format>uint16</Format>
+        </Field>
+        <Field name="Request Op Code">
+            <Requirement>C3</Requirement>
+            <Format>uint8</Format>
+        </Field>
+        <Field name="Response Value">
+            <Requirement>C3</Requirement>
+            <Format>uint8</Format>
+        </Field>
+        <Field name="Response Parameter">
+            <Requirement>C3</Requirement>
+            <Format>variable</Format>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>

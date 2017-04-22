@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['a4wp_5fhal_5fbrcm_5fpmu_5f59350',['A4WP_HAL_BRCM_PMU_59350',['../a4wp__hal__api_8h.html#a68a1de8a08917646dd149e2b5ea079d2ae9e0e3698dfa62d5fe462968655d4ae9',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fbrcm_5fpmu_5f59351',['A4WP_HAL_BRCM_PMU_59351',['../a4wp__hal__api_8h.html#a68a1de8a08917646dd149e2b5ea079d2a1290d14680337d56dd7957cdf4fbf63e',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fbrcm_5fpmu_5f59353',['A4WP_HAL_BRCM_PMU_59353',['../a4wp__hal__api_8h.html#a68a1de8a08917646dd149e2b5ea079d2a12e50c6d6690df5bd40ee75734149545',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fstatus_5ffailure',['A4WP_HAL_STATUS_FAILURE',['../a4wp__hal__api_8h.html#a0a9ad9743955437533c69eac4c9c114aa7d02c629da9a56199e2edbf72d21a98d',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fstatus_5finternal_5ferror',['A4WP_HAL_STATUS_INTERNAL_ERROR',['../a4wp__hal__api_8h.html#a0a9ad9743955437533c69eac4c9c114aa524e9226e7d1c25cdeba1df6793ed002',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fstatus_5finvalid',['A4WP_HAL_STATUS_INVALID',['../a4wp__hal__api_8h.html#a0a9ad9743955437533c69eac4c9c114aaf60dbea60f974c50f52ad5d6b71e6137',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fstatus_5fsuccess',['A4WP_HAL_STATUS_SUCCESS',['../a4wp__hal__api_8h.html#a0a9ad9743955437533c69eac4c9c114aa01d9198f6f27053325a7ba9e4d3a4e1e',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fwpt_5fprotocol_5fa4wp',['A4WP_HAL_WPT_PROTOCOL_A4WP',['../a4wp__hal__api_8h.html#a415e65565df9bba8a3749b4384a19723a5a24cdfb3a1dd06d2d6b004f8909168c',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fwpt_5fprotocol_5fnone',['A4WP_HAL_WPT_PROTOCOL_NONE',['../a4wp__hal__api_8h.html#a415e65565df9bba8a3749b4384a19723ad13ab3376dd48c9f2e23ddc28d9e9b22',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fwpt_5fprotocol_5fpma',['A4WP_HAL_WPT_PROTOCOL_PMA',['../a4wp__hal__api_8h.html#a415e65565df9bba8a3749b4384a19723afe8c297a0f281c2fbc9981c78db4423b',1,'a4wp_hal_api.h']]],
+  ['a4wp_5fhal_5fwpt_5fprotocol_5fwpc',['A4WP_HAL_WPT_PROTOCOL_WPC',['../a4wp__hal__api_8h.html#a415e65565df9bba8a3749b4384a19723abc12c5e771710e030a7fceafaefef474',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5fctrl',['A4WP_REG_CTRL',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434a9ff22a6422ecc11fc72fc8c13014cb39',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5fdevid',['A4WP_REG_DEVID',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434ae5c4eea7fbf683f192c5a549075efd31',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5fiocon',['A4WP_REG_IOCON',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434ad0f3d8edb723508b81b5adb0a6dda0b5',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5fiout',['A4WP_REG_IOUT',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434a9bf752a8bc9e14e47bec6167f88a3d15',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5firect',['A4WP_REG_IRECT',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434a3a4e21e9ae20faa21414ecffeeae8bbe',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5ftemp',['A4WP_REG_TEMP',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434ae98d1bafc74e099e3087139cb466634c',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5ftemp_5fonchip',['A4WP_REG_TEMP_ONCHIP',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434aaf177ba332d50c23ce810de074bc4fef',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5fvout',['A4WP_REG_VOUT',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434ab473fb378f46d4abb70c71c0644b8e1a',1,'a4wp_hal_api.h']]],
+  ['a4wp_5freg_5fvrect',['A4WP_REG_VRECT',['../a4wp__hal__api_8h.html#ace03428a6de814fe4f5033cfaf403434ae93be81746cba710d44026ef2f95e34e',1,'a4wp_hal_api.h']]]
+];

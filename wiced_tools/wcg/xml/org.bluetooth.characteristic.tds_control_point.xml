@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2015 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="TDS Control Point" type="org.bluetooth.characteristic.tds_control_point" uuid="2ABC" last-modified="2015-11-23">
+    <InformativeText>
+        <Abstract>
+            The TDS Control Point characteristic is used to request activation of a transport. Additional Op Codes may be added in the future for other purposes.
+        </Abstract>
+        <Summary>
+            The TDS Control Point characteristic is defined in the Transport Discovery Service, Section 4.1 and its sub-sections.
+        </Summary>
+    </InformativeText>
+    <Value>
+        <Field name="Op Code">
+            <InformativeText>
+                The Op Code is a mandatory field of the "TDS Control Point" characteristic.
+                <br>
+                    C1:This Field is Mandatory for the "TDS Control Point" characteristic, and excluded for "TDS Control Point" indication.
+                </br>
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="0" value="Reserved for future use" />
+                <Enumeration key="1" value="Activate Transport" description="When the Activate Transport Op Code is written to the TDS Control Point and the response is 'Success', the actions to follow are defined by a higher level specification. The contents of the organization-specific octets in the parameter for this Op code are defined by a higher level specification. In the event that an error condition occurs, the applicable Error Response shall be sent." />
+                <ReservedForFutureUse start="2" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="Organization ID">
+            <InformativeText>
+                The Organization ID is a mandatory field of the "TDS Control Point" characteristic.
+                <br>
+                    C1:This Field is Mandatory for the "TDS Control Point" characteristic, and excluded for "TDS Control Point" indication.
+                </br>
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="0" value="Reserved for future use" />
+                <Enumeration key="1" value="Bluetooth SIG" description="Bluetooth SIG" />
+                <ReservedForFutureUse start="2" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="Parameter">
+            <InformativeText>
+                The Parameter is an optional field of the "TDS Control Point" characteristic containing 0 - 19 octets. Parameters larger than 19 octets are permitted if a larger MTU is negotiated.
+                <br>
+                    C1:This Field is Optional for the "TDS Control Point" characteristic, and excluded for "TDS Control Point" indication.
+                </br>
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Format>variable</Format>
+        </Field>
+        <Field name="Requested Op Code">
+            <InformativeText>
+                The Requested Op Code is a mandatory field of the "TDS Control Point" indication.
+                <br>
+                    C2:This Field is Mandatory for the "TDS Control Point" indication, and excluded for "TDS Control Point" characteristic.
+                </br>
+            </InformativeText>
+            <Requirement>C2</Requirement>
+            <Format>uint8</Format>
+            <Description>Refer to the Op Code table above for additional information on the possible values for this field.</Description>
+        </Field>
+        <Field name="Result Code">
+            <InformativeText>
+                The Result Code is a mandatory field of the "TDS Control Point" indication.
+                <br>
+                    C2:This Field is Mandatory for the "TDS Control Point" indication, and excluded for "TDS Control Point" characteristic.
+                </br>
+            </InformativeText>
+            <Requirement>C2</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="0" value="Success" description="Response for successful operation. " />
+                <Enumeration key="1" value="Op Code not Supported" description="Response if unsupported Op Code is received." />
+                <Enumeration key="2" value="Invalid Parameter" description="Response if Parameter received does not meet the requirements of the service or is outside of the supported range of the Sensor." />
+                <Enumeration key="3" value="Unsupported Organization ID" description="Response if unsupported or RFU Organization ID is received." />
+                <Enumeration key="4" value="Operation Failed" description="Response if the requested procedure failed for any other reason than those enumerated in this table." />
+                <ReservedForFutureUse start="5" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="Response Parameter">
+            <InformativeText>
+                The Response Parameter is an optional field of the "TDS Control Point" indication containing 0 - 19 octets. Response Parameters larger than 19 octets are permitted if a larger MTU is negotiated.
+                <br>
+                    C2:This Field is Optional for the "TDS Control Point" indication, and excluded for "TDS Control Point" characteristic.
+                </br>
+            </InformativeText>
+            <Requirement>C2</Requirement>
+            <Format>variable</Format>
+            <Description>Note: The Response Parameter field, if present, shall contain the relevant 1 octet Organization ID followed by transport-specific data.</Description>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>

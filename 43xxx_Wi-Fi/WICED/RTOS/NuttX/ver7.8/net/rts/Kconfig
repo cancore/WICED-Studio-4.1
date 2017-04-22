@@ -1,0 +1,16 @@
+#
+# For a description of the syntax of this configuration file,
+# see misc/tools/kconfig-language.txt.
+#
+
+menu "Route (AF_ROUTE) Socket support"
+
+config NET_RTS
+	bool "Route socket"
+	default n
+	depends on NET
+    select NET_IOB
+	---help---
+		Enable or disable AF_ROUTE socket support.
+
+endmenu # Route Socket Support

@@ -1,0 +1,28 @@
+var group__wifi =
+[
+    [ "WLAN Power Saving functions", "group__wifipower.html", null ],
+    [ "Packet Filter functions", "group__packetfilter.html", null ],
+    [ "Keep-Alive functions", "group__keepalive.html", null ],
+    [ "Connection Manager", "group__connection__manager.html", "group__connection__manager" ],
+    [ "wiced_wifi_rrm_event_handler_t", "group__wifi.html#gaa29db5447a9a93d4eb9c460d1b30d11d", null ],
+    [ "wiced_stop_ap", "group__wifi.html#ga563657210072e0630139c89960fe0a0d", null ],
+    [ "wiced_wifi_add_custom_ie", "group__wifi.html#ga0c3070ff8afcbb032e7cff4028335442", null ],
+    [ "wiced_wifi_down", "group__wifi.html#gae19c10a152e91de9c890f9ec7577b9d6", null ],
+    [ "wiced_wifi_enter_ds1", "group__wifi.html#ga5f71e3a67b1a1a09240c394e24a77bdb", null ],
+    [ "wiced_wifi_exit_ds1", "group__wifi.html#gad51f6ce2883da87aff8c0ff637888e59", null ],
+    [ "wiced_wifi_find_ap", "group__wifi.html#gae6b0c4a36d630b6e37281b56247df914", null ],
+    [ "wiced_wifi_find_best_channel", "group__wifi.html#ga1391f6bc6ecc329647be758e50a52ad2", null ],
+    [ "wiced_wifi_join_halt", "group__wifi.html#ga18df9c4f493caa7676fe0da5263408eb", null ],
+    [ "wiced_wifi_pno_start", "group__wifi.html#ga2719d624b63296ba841780041dce018f", null ],
+    [ "wiced_wifi_register_rrm_event_handler", "group__wifi.html#ga1159a82aa6bc8ed0ba932a0023f06e9b", null ],
+    [ "wiced_wifi_register_softap_event_handler", "group__wifi.html#gab16dcf459642169520ecf50a38870f3e", null ],
+    [ "wiced_wifi_remove_custom_ie", "group__wifi.html#ga9bb711c12af20b83e526ac6824c72e7a", null ],
+    [ "wiced_wifi_scan_disable", "group__wifi.html#ga0301d8b10d8c5eeaa67ad6fc153f1c01", null ],
+    [ "wiced_wifi_scan_networks", "group__wifi.html#ga4e058d74fb992af5396eff59755cbde0", null ],
+    [ "wiced_wifi_start_ap_with_custom_ie", "group__wifi.html#gab65820715c9c79172d978e938e3bba26", null ],
+    [ "wiced_wifi_unregister_rrm_event_handler", "group__wifi.html#ga1a5d46afcefb6328739b20a93570eda2", null ],
+    [ "wiced_wifi_unregister_softap_event_handler", "group__wifi.html#gad482437dc22c49670d054d8b45d600d9", null ],
+    [ "wiced_wifi_up", "group__wifi.html#ga00a6dfccec8120774fec0eca6f6266ee", null ],
+    [ "wiced_wps_enrollee", "group__wifi.html#gac9fb59d0bc733fcd1b09966679d09de4", null ],
+    [ "wiced_wps_registrar", "group__wifi.html#ga4da6aaf6d704cbcf1680a64c66f5eb0b", null ]
+];

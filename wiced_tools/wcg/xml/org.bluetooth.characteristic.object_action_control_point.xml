@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2015 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Object Action Control Point" type="org.bluetooth.characteristic.object_action_control_point" uuid="2AC5" last-modified="2015-11-23" approved="Yes">
+    <InformativeText>
+        <Abstract>
+            The Object Action Control Point is used by a Client to control certain behaviors of the Server. With the exception of the Create procedure which creates a new object, the OACP procedures affect the Current Object only.
+        </Abstract>
+        <Summary>
+            The Object Action Control Point (OACP) characteristic is defined in the Object Transfer Service Section 3.3 and its sub-sections.
+        </Summary>
+    </InformativeText>
+    <Value>
+        <Field name="Op Code">
+            <InformativeText>
+                The Op Code is a mandatory field of the "Object Action Control Point" characteristic.
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="0" value="Reserved for future use" />
+                <Enumeration key="1" value="Create" description="When the Create Op Code is written to the OACP along with Type and Size parameters and an error condition does not occur, the Server shall create a new, empty object. The response to this control point is Op Code 0x60 followed by the appropriate Response Value." />
+                <Enumeration key="2" value="Delete" description="When the Delete Op Code is written to the OACP and an error condition does not occur, the Server shall delete the Current Object." />
+                <Enumeration key="3" value="Calculate Checksum" description="This procedure enables a Client to compare a checksum that it has calculated itself with a checksum provided by the Server for the same octets, so that the Client can detect any discrepancy in the data transferred in either direction." />
+                <Enumeration key="4" value="Execute" description="When the Execute Op Code is written to the OACP and an error condition does not occur, the Server shall use the Current Object to perform an operation on the Server device." />
+                <Enumeration key="5" value="Read" description="When the Read Op Code is written to the OACP and an error condition does not occur, the Server shall send object data to the Client through the Object Transfer Channel opened by the Client." />
+                <Enumeration key="6" value="Write" description="When the Write Op Code is written to the OACP and an error condition does not occur, the Server shall open the Current Object for writing and prepare to accept data from the Client through the Object Transfer Channel opened by the Client, writing the data received to the Current Object." />
+                <Enumeration key="7" value="Abort" requires="C1" description="When the Abort Op Code is written to the OACP and an error condition does not occur, the Server shall cease sending previously requested data to the Client through the Object Transfer Channel." />
+                <Enumeration key="96" value="Response Code" description="The Response Code is followed by the Request Op Code, the Response Value and optionally, the Response Parameter." />
+                <ReservedForFutureUse start="8" end="95" />
+                <ReservedForFutureUse start="97" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="Parameter">
+            <InformativeText>
+                Defined per Service specification.
+            </InformativeText>
+            <Requirement>Optional</Requirement>
+            <Format>variable</Format>
+        </Field>
+        <Field name="Request Op Code">
+            <InformativeText>
+                The Request Op Code is a sub field of the Parameter Value for "Response Code" Op Code.
+                <br>
+                    C1: This Field is Mandatory for "Response Code" Op Code, otherwise this field is Excluded.
+                </br>
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Format>uint8</Format>
+            <Description>Refer to the Op Code table above for additional information on the possible values for this field.</Description>
+        </Field>
+        <Field name="Result Code">
+            <InformativeText>
+                The Result Code is a sub field of the Parameter Value for "Response Code" Op Code
+                <br>
+                    C1: This Field is Mandatory for "Response Code" Op Code, otherwise this field is Excluded.
+                </br>
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="1" value="Success" description="Response for successful operation." />
+                <Enumeration key="2" value="Op Code Not Supported" description="Response if unsupported Op Code is received." />
+                <Enumeration key="3" value="Invalid Parameter" description="Response if Parameter received does not meet the requirements of the service." />
+                <Enumeration key="4" value="Insufficient Resources" description="Response if the number of octets requested via the value of the Length parameter or Size parameter (as applicable) exceeds the available memory or processing capabilities of the Server." />
+                <Enumeration key="5" value="Invalid Object" description="Response if the requested OACP procedure cannot be performed because the Current Object is an Invalid Object." />
+                <Enumeration key="6" value="Channel Unavailable" description="Response if the requested procedure could not be performed because an Object Transfer Channel was not available for use." />
+                <Enumeration key="7" value="Unsupported Type" description="Response if the object type specified in the OACP procedure Type parameter is not supported by the Server." />
+                <Enumeration key="8" value="Procedure Not Permitted" description="Response if the requested procedure is not permitted according to the properties of the Current Object." />
+                <Enumeration key="9" value="Object Locked" description="Response if the Current Object is temporarily locked by the Server." />
+                <Enumeration key="10" value="Operation Failed" description="Response if the requested procedure failed for any reason other than those enumerated in this table." />
+                <ReservedForFutureUse start="0" end="0" />
+                <ReservedForFutureUse start="11" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="Response Parameter">
+            <InformativeText>
+                The Response Parameter is a sub field of the Parameter Value for "Response Code" Op Code.
+                <br>
+                    C2:This Field is Optional for "Response Code" Op Code, otherwise this field is Excluded.
+                </br>
+            </InformativeText>
+            <Requirement>C2</Requirement>
+            <Format>variable</Format>
+            <Description>Note: The Response Parameter Value of the response to the Control Point is a variable length field to allow a list of different values defined by the Service Specification</Description>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>

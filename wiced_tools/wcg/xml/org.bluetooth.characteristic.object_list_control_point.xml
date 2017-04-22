@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2014 Bluetooth SIG, Inc. All rights reserved.-->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Object List Control Point" type="org.bluetooth.characteristic.object_list_control_point" uuid="2AC6" last-modified="2015-11-23" approved="Yes">
+    <InformativeText>
+        <Abstract>
+            The Object List Control Point (OLCP) characteristic is used by a Client to control certain behaviors of the Server. The role of the OLCP is to provide a mechanism for the Client to find the desired object and to designate it as the Current Object.
+        </Abstract>
+        <Summary>
+            The Object List Control Point (OLCP) characteristic is defined in the Object Transfer Service Section 3.4 and its sub-sections.
+        </Summary>
+    </InformativeText>
+    <Value>
+        <Field name="Op Code">
+            <InformativeText>
+                The Op Code is a mandatory field of the "Object List Control Point" characteristic.
+            </InformativeText>
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="0" value="Reserved for future use" />
+                <Enumeration key="1" value="First" description="When the First Op Code is written to the OLCP, the Server shall make the first object in the list become the Current Object." />
+                <Enumeration key="2" value="Last" description="When the Last Op Code is written to the OLCP, the Server shall make the last object in the list become the Current Object." />
+                <Enumeration key="3" value="Previous" description="When the Previous Op Code is written to the OLCP, the Server shall make the object immediately preceding the Current Object in the list become the Current Object." />
+                <Enumeration key="4" value="Next" description="When the Next Op Code is written to the OLCP, the Server shall make the object immediately after the Current Object in the list become the Current Object." />
+                <Enumeration key="5" value="Go To" description="This procedure enables a Client to select an object directly by specifying its Object ID." />
+                <Enumeration key="6" value="Order" description="When the Order Op Code is written to the OLCP and re-ordering of the list is supported by the Server, the Server shall arrange the list of objects in order according to the value of the List Sort Order parameter." />
+                <Enumeration key="7" value="Request Number of Objects" description="When the Request Number of Objects Op Code is written to the OLCP and the reporting of the number of objects is supported, the Server shall report the total number of objects found in the list of objects." />
+                <Enumeration key="8" value="Clear Marking" description="When the Clear Marking Op Code is written to the OLCP and the clearing of marking is supported, the Server shall update the marking of objects so that all objects in the list of objects become unmarked in respect of the Client that sent the Clear Marking Op Code" />
+                <Enumeration key="112" value="Response Code" description="The Response Code is followed by the Request Op Code, the Response Value and optionally, the Response Parameter." />
+                <ReservedForFutureUse start="9" end="111" />
+                <ReservedForFutureUse start="113" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="Parameter">
+            <InformativeText>
+                Defined per Service specification.
+            </InformativeText>
+            <Requirement>Optional</Requirement>
+            <Format>variable</Format>
+        </Field>
+        <Field name="Request Op Code">
+            <InformativeText>
+                The Request Op Code is a sub field of the Parameter Value for "Response Code" Op Code.
+                <br>
+                    C1: This Field is Mandatory for "Response Code" Op Code, otherwise this field is Excluded.
+                </br>
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Format>uint8</Format>
+            <Description>Refer to the Op Code table above for additional information on the possible values for this field.</Description>
+        </Field>
+        <Field name="Result Code">
+            <InformativeText>
+                The Result Code is a sub field of the Parameter Value for "Response Code" Op Code
+                <br>
+                    C1: This Field is Mandatory for "Response Code" Op Code, otherwise this field is Excluded.
+                </br>
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Format>uint8</Format>
+            <Enumerations>
+                <Enumeration key="1" value="Success" description="Response for successful operation." />
+                <Enumeration key="2" value="Op Code not Supported" description="Response if unsupported Op Code is received." />
+                <Enumeration key="3" value="Invalid Parameter" description="Response if Parameter received does not meet the requirements of the service." />
+                <Enumeration key="4" value="Operation Failed" description="Response if the requested procedure failed for a reason other than those enumerated below." />
+                <Enumeration key="5" value="Out Of Bounds" description="Response if the requested procedure attempted to select an object beyond the first object or beyond the last object in the current list." />
+                <Enumeration key="6" value="Too Many Objects" description="Response if the requested procedure failed due to too many objects in the current list." />
+                <Enumeration key="7" value="No Object" description="Response if the requested procedure failed due to there being zero objects in the current list." />
+                <Enumeration key="8" value="Object ID Not Found" description="Response if the requested procedure failed due to there being no object with the requested Object ID." />
+                <ReservedForFutureUse start="0" end="0" />
+                <ReservedForFutureUse start="9" end="255" />
+            </Enumerations>
+        </Field>
+        <Field name="Response Parameter">
+            <InformativeText>
+                The Response Parameter is a sub field of the Parameter Value for "Response Code" Op Code.
+                <br>
+                    C2:This Field is mandatory for "Response Code" Op Code with "Request Number of Objects" Request Op Code and "Success" Result Code, otherwise this field is Excluded.
+                </br>
+            </InformativeText>
+            <Requirement>C2</Requirement>
+            <Format>uint32</Format>
+            <Description>Note: Response Parameter for Op Code 7 or 0x07 in Hex: The Parameter Value of the response to the Control Point 0x07 (Request Number of Objects) is a UINT32 representing the number of objects.</Description>
+        </Field>
+    </Value>
+    <Note>
+        The original file only included the informative text section. The value section was added for compatibility with the Bluetooth designer plug-in.
+    </Note>
+</Characteristic>
